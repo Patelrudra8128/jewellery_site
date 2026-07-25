@@ -70,7 +70,7 @@
     <div class="container">
       <div class="hero-content">
         <p class="hero-tagline">Signature Collection</p>
-        <h1 class="hero-title">Precision and<br><span class="hero-italic">Elegance</span> Defined</h1>
+        <h1 class="hero-title">Precision and<br> <span class="hero-italic">Elegance</span> Defined</h1>
         <p class="hero-desc">Indulge in our curated selection of luxury watches, fine diamond jewellery, and premium solid gold chains, designed for those who appreciate timeless craftsmanship.</p>
         <div class="hero-actions">
           <a href="#shop" class="btn btn-primary">Shop Collection</a>
@@ -347,7 +347,7 @@
     <div class="modal-content-wrapper" style="width: 1100px; max-width: 90%;">
       <button class="modal-close-btn" id="checkout-close-btn" aria-label="Close Checkout Modal">&times;</button>
       
-      <div class="checkout-modal-content">
+      <div class="checkout-modal-content" id="checkout-main-content">
         <h2 class="checkout-title">Secured Checkout</h2>
         
         <form class="checkout-grid" id="checkout-form">
@@ -467,6 +467,35 @@
           </div>
         </form>
       </div>
+
+      <!-- Checkout Success Content -->
+      <div class="checkout-success-content" id="checkout-success-view" style="display: none;">
+        <div class="success-icon-wrapper">
+          <svg class="success-checkmark" viewBox="0 0 52 52">
+            <circle class="success-checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="success-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+        <h2 class="success-title">Order Confirmed</h2>
+        <p class="success-subtitle">Thank you for your purchase at VALERIUS.</p>
+        
+        <div class="success-details-card">
+          <div class="success-details-row">
+            <span>Transaction ID:</span>
+            <strong id="success-tx-id">TXN-0000000000</strong>
+          </div>
+          <div class="success-details-row">
+            <span>Amount Paid:</span>
+            <strong id="success-amount-paid">₹0</strong>
+          </div>
+          <div class="success-details-row">
+            <span>Shipment Status:</span>
+            <strong style="color: #4caf50;">Insured & Dispatched in 24h</strong>
+          </div>
+        </div>
+        
+        <button type="button" class="btn btn-primary" id="success-continue-btn" style="width: auto;">Continue Shopping</button>
+      </div>
     </div>
   </div>
 
@@ -490,6 +519,14 @@
     </div>
     <div class="notification-text" id="notif-text">Product added to cart successfully.</div>
   </div>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
 
   <!-- JAVASCRIPT LOGIC -->
   <script src="app.js"></script>

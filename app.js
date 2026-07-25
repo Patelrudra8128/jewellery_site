@@ -248,6 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupEventListeners();
   startTestimonialSlider();
   detectSimulatedLocation();
+  initBackToTop();
 });
 
 // Detect simulated location currency conversion
@@ -565,6 +566,29 @@ function setupEventListeners() {
       newsletterForm.reset();
     });
   }
+
+  // Close success checkmark modal screen
+  const successContinueBtn = document.getElementById("success-continue-btn");
+  if (successContinueBtn) {
+    successContinueBtn.addEventListener("click", () => {
+      checkoutModal.classList.remove("open");
+    });
+  }
+
+  // Real-time input validation for checkout form fields
+  if (checkoutForm) {
+    const checkoutInputs = checkoutForm.querySelectorAll(".form-input");
+    checkoutInputs.forEach(input => {
+      input.addEventListener("blur", () => {
+        validateField(input);
+      });
+      input.addEventListener("input", () => {
+        if (input.classList.contains("invalid") || input.classList.contains("valid")) {
+          validateField(input);
+        }
+      });
+    });
+  }
 }
 
 // Close All Modals
@@ -596,6 +620,7 @@ function quickAddToCart(product) {
   
   addToCart(product.id, product.name, product.priceInr, product.mainImage, defaultMetal, defaultSize, 1);
   showNotification(`${product.name} added to cart.`);
+  openCart();
 }
 
 // Cart Core Operations
@@ -1021,6 +1046,19 @@ function renderReviewsList(reviews) {
 // Checkout Modal Actions
 function openCheckoutModal() {
   if (!checkoutModal) return;
+
+  // Reset modal display state
+  const mainContent = document.getElementById("checkout-main-content");
+  const successView = document.getElementById("checkout-success-view");
+  if (mainContent) mainContent.style.display = "block";
+  if (successView) successView.style.display = "none";
+  
+  // Clear any validation visual marks
+  const inputs = checkoutForm ? checkoutForm.querySelectorAll(".form-input") : [];
+  inputs.forEach(input => {
+    input.classList.remove("valid", "invalid");
+  });
+
   checkoutModal.classList.add("open");
   appliedPromo = null;
   if (promoStatusText) promoStatusText.innerText = "";
@@ -1106,6 +1144,21 @@ function showPromoStatus(msg, status) {
 function handleCheckoutSubmit(e) {
   e.preventDefault();
 
+  // Run final form validation check
+  const inputs = checkoutForm.querySelectorAll(".form-input");
+  let isValid = true;
+  inputs.forEach(input => {
+    validateField(input);
+    if (input.classList.contains("invalid")) {
+      isValid = false;
+    }
+  });
+
+  if (!isValid) {
+    showNotification("Please correct form errors before proceeding.");
+    return;
+  }
+
   const button = checkoutForm.querySelector("button[type='submit']");
   const origText = button.innerText;
   button.disabled = true;
@@ -1117,18 +1170,30 @@ function handleCheckoutSubmit(e) {
     // Payment Successful
     button.disabled = false;
     button.innerText = origText;
-    button.style.backgroundColor = "var(--accent-gold)";
+    button.style.backgroundColor = ""; // Reset inline override
 
-    checkoutModal.classList.remove("open");
+    // Get order details
+    const totalAmount = document.getElementById("checkout-grand-total").innerText;
+    
+    // Generate simulated payment attributes
+    const randomTxId = "TXN-" + Math.floor(1000000000 + Math.random() * 9000000000);
+    const txIdEl = document.getElementById("success-tx-id");
+    const amountEl = document.getElementById("success-amount-paid");
+    
+    if (txIdEl) txIdEl.innerText = randomTxId;
+    if (amountEl) amountEl.innerText = totalAmount;
+
+    // Toggle view to success screen inside checkout modal
+    const mainContent = document.getElementById("checkout-main-content");
+    const successView = document.getElementById("checkout-success-view");
+    if (mainContent) mainContent.style.display = "none";
+    if (successView) successView.style.display = "flex";
     
     // Clear Cart
     cart = [];
     localStorage.removeItem("valerius_cart");
     updateCartBadge();
     updateCartSidebar();
-
-    // Show Thank You Alert
-    alert("Payment Successful!\n\nYour simulated order has been placed. A payment receipt and shipping schedule have been sent to your email. (Secure Razorpay Sandbox simulation complete.)");
   }, 2500);
 }
 
@@ -1244,4 +1309,45 @@ function initScrollReveal() {
   document.querySelectorAll(".scroll-reveal").forEach(el => {
     scrollObserver.observe(el);
   });
+}
+
+// Back to Top functionality
+function initBackToTop() {
+  const backToTopBtn = document.getElementById("back-to-top");
+  if (!backToTopBtn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
+// Field validation helper
+function validateField(input) {
+  if (input.required && !input.value.trim()) {
+    input.classList.add("invalid");
+    input.classList.remove("valid");
+  } else if (input.type === "email" && !validateEmail(input.value)) {
+    input.classList.add("invalid");
+    input.classList.remove("valid");
+  } else {
+    input.classList.remove("invalid");
+    input.classList.add("valid");
+  }
+}
+
+// Email format validator
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
 }
