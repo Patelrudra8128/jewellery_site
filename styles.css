@@ -463,17 +463,38 @@ header .container {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  transition: var(--transition-fast);
+  position: relative;
 }
 
-.bg-option:hover {
-  color: var(--text-primary);
+.bg-toggle-group {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 30px !important;
+  border: 1px solid var(--border-color);
+  padding: 0.2rem;
+  backdrop-filter: blur(4px);
 }
 
 .bg-option input[type="radio"] {
-  accent-color: var(--accent-gold);
-  cursor: pointer;
+  display: none;
+}
+
+.bg-option span {
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px !important;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+  color: var(--text-secondary);
+}
+
+.bg-option:hover span {
+  color: var(--text-primary);
+}
+
+.bg-option input[type="radio"]:checked + span {
+  background-color: var(--accent-gold);
+  color: var(--bg-primary);
 }
 
 /* Storytelling Section */
