@@ -399,6 +399,21 @@ function setupEventListeners() {
     sortSelect.addEventListener("change", renderProducts);
   }
 
+  // Hero Background Selector
+  const heroSection = document.getElementById("home");
+  const heroBgRadios = document.querySelectorAll('input[name="hero-bg"]');
+  if (heroSection && heroBgRadios.length > 0) {
+    heroBgRadios.forEach(radio => {
+      radio.addEventListener("change", (e) => {
+        if (e.target.value === "video") {
+          heroSection.classList.add("video-active");
+        } else {
+          heroSection.classList.remove("video-active");
+        }
+      });
+    });
+  }
+
   // Mobile Menu
   if (mobileToggle && navigationMenu) {
     mobileToggle.addEventListener("click", () => {

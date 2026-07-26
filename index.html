@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VALERIUS | Luxury Watches, Jewellery & Chains</title>
-  <meta name="description" content="Discover VALERIUS, a premier collection of luxury wristwatches, fine diamond jewellery, and premium solid gold chains. Designed for elegance and precision.">
+  <meta name="description"
+    content="Discover VALERIUS, a premier collection of luxury wristwatches, fine diamond jewellery, and premium solid gold chains. Designed for elegance and precision.">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- ANNOUNCEMENT BAR -->
-  <div style="background-color: var(--accent-gold); color: var(--bg-primary); text-align: center; padding: 0.6rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;">
+  <div
+    style="background-color: var(--accent-gold); color: var(--bg-primary); text-align: center; padding: 0.6rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;">
     Free Insured Shipping & 7-Day Returns | Simulated Sandbox Demonstration
   </div>
 
@@ -49,7 +53,7 @@
             <option value="GBP">GBP (£)</option>
           </select>
         </div>
-        
+
         <div class="cart-icon-wrapper" id="cart-icon-btn">
           <button class="cart-btn" aria-label="Open Cart">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -65,13 +69,31 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero" id="home">
+  <section class="hero video-active" id="home">
+    <video autoplay muted loop playsinline class="hero-video" id="hero-video">
+      <source src="/assets/bgvideo.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
+    
+    <!-- Background Selector moved to top-left -->
+    <div class="hero-bg-selector top-left-selector">
+      <span class="bg-selector-label">Background:</span>
+      <label class="bg-option">
+        <input type="radio" name="hero-bg" value="image">
+        <span>Image</span>
+      </label>
+      <label class="bg-option">
+        <input type="radio" name="hero-bg" value="video" checked>
+        <span>Video</span>
+      </label>
+    </div>
+
     <div class="container">
       <div class="hero-content">
         <p class="hero-tagline">Signature Collection</p>
         <h1 class="hero-title">Precision and<br> <span class="hero-italic">Elegance</span> Defined</h1>
-        <p class="hero-desc">Indulge in our curated selection of luxury watches, fine diamond jewellery, and premium solid gold chains, designed for those who appreciate timeless craftsmanship.</p>
+        <p class="hero-desc">Indulge in our curated selection of luxury watches, fine diamond jewellery, and premium
+          solid gold chains, designed for those who appreciate timeless craftsmanship.</p>
         <div class="hero-actions">
           <a href="#shop" class="btn btn-primary">Shop Collection</a>
           <a href="#story" class="btn btn-outline">Our Story</a>
@@ -85,7 +107,7 @@
     <div class="ambient-glow" style="top: 5%; left: -10%;"></div>
     <div class="ambient-glow" style="bottom: 5%; right: -10%;"></div>
     <div class="container">
-      
+
       <!-- Part 1: The Brand Heritage -->
       <div class="story-grid scroll-reveal" style="margin-bottom: 4rem;">
         <div class="story-image-wrapper">
@@ -94,13 +116,18 @@
         <div class="story-content">
           <div class="section-title-wrapper" style="text-align: left; margin-bottom: 2rem;">
             <p class="section-subtitle">Heritage</p>
-            <h2 class="section-title" style="display: block; text-align: left; margin-top: 0;">The Legacy of Valerius</h2>
+            <h2 class="section-title" style="display: block; text-align: left; margin-top: 0;">The Legacy of Valerius
+            </h2>
           </div>
-          <p class="story-desc">For generations, VALERIUS has stood at the intersection of traditional mechanics and high art. Each piece in our collection is meticulously crafted, ensuring a standard of luxury that transcends eras and seasons.</p>
+          <p class="story-desc">For generations, VALERIUS has stood at the intersection of traditional mechanics and
+            high art. Each piece in our collection is meticulously crafted, ensuring a standard of luxury that
+            transcends eras and seasons.</p>
           <div class="story-quote">
-            "True luxury is in the details, where heritage meets master innovation, creating icons to pass down through generations."
+            "True luxury is in the details, where heritage meets master innovation, creating icons to pass down through
+            generations."
           </div>
-          <p class="story-desc">From complex watch calibers to precision-cut diamond solitaires, our creations represent the pinnacle of accessory design and individual expression.</p>
+          <p class="story-desc">From complex watch calibers to precision-cut diamond solitaires, our creations represent
+            the pinnacle of accessory design and individual expression.</p>
         </div>
       </div>
 
@@ -109,13 +136,18 @@
         <div class="story-content">
           <div class="section-title-wrapper" style="text-align: left; margin-bottom: 2rem;">
             <p class="section-subtitle">Our Atelier</p>
-            <h2 class="section-title" style="display: block; text-align: left; margin-top: 0;">Grace in the Workshop</h2>
+            <h2 class="section-title" style="display: block; text-align: left; margin-top: 0;">Grace in the Workshop
+            </h2>
           </div>
-          <p class="story-desc">Our design philosophy is anchored in serenity and slow, meticulous craftsmanship. Inside our private atelier, master jewellers work in silent focus, transforming raw metals and precious gems into wearable art.</p>
+          <p class="story-desc">Our design philosophy is anchored in serenity and slow, meticulous craftsmanship. Inside
+            our private atelier, master jewellers work in silent focus, transforming raw metals and precious gems into
+            wearable art.</p>
           <div class="story-quote">
             "In the quiet corners of our studio, elegance walks on soft paws, inspiring the stillness of our creations."
           </div>
-          <p class="story-desc">A key part of our workshop family is <strong>Bianca</strong>, a pure white Turkish Angora cat. Lounging silently next to watchmaking benches and diamond trays, her calm poise and flawless white silhouette have become the living mascot of our aesthetic direction.</p>
+          <p class="story-desc">A key part of our workshop family is <strong>Bianca</strong>, a pure white Turkish
+            Angora cat. Lounging silently next to watchmaking benches and diamond trays, her calm poise and flawless
+            white silhouette have become the living mascot of our aesthetic direction.</p>
         </div>
         <div class="muse-images">
           <div class="muse-img-wrapper">
@@ -187,7 +219,8 @@
 
   <!-- PRODUCTS LISTING SECTION -->
   <section class="products" id="shop" style="position: relative; overflow: hidden;">
-    <div class="ambient-glow" style="top: 25%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px;"></div>
+    <div class="ambient-glow"
+      style="top: 25%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px;"></div>
     <div class="container" style="position: relative; z-index: 1;">
       <div class="section-title-wrapper">
         <p class="section-subtitle">Exquisite Catalogue</p>
@@ -212,7 +245,7 @@
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </div>
-          
+
           <!-- Sort Selector -->
           <select class="sort-select" id="product-sort" aria-label="Sort Products">
             <option value="featured">Sort: Featured</option>
@@ -235,7 +268,8 @@
     <div class="container">
       <div class="testimonial-slider">
         <div class="testimonial-icon">“</div>
-        <p class="testimonial-text" id="active-testimonial">An absolute masterpiece of a watch. The weight, the finish, and the service from Valerius were top tier. I will definitely be purchasing my next chronograph here.</p>
+        <p class="testimonial-text" id="active-testimonial">An absolute masterpiece of a watch. The weight, the finish,
+          and the service from Valerius were top tier. I will definitely be purchasing my next chronograph here.</p>
         <p class="testimonial-author" id="active-testimonial-author">James L.</p>
         <p class="testimonial-title" id="active-testimonial-title">Connoisseur & Collector</p>
       </div>
@@ -248,20 +282,31 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#" class="logo">VALERIUS<span>.</span></a>
-          <p>VALERIUS is an established purveyor of luxury watches, fine jewellery, and classic solid gold chains. Crafting memories and legacy pieces since 1998.</p>
+          <p>VALERIUS is an established purveyor of luxury watches, fine jewellery, and classic solid gold chains.
+            Crafting memories and legacy pieces since 1998.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
             </a>
             <a href="#" class="social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
             </a>
             <a href="#" class="social-link" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                </path>
+              </svg>
             </a>
           </div>
         </div>
-        
+
         <div class="footer-column">
           <h3 class="footer-title">Departments</h3>
           <ul class="footer-links">
@@ -286,12 +331,13 @@
           <h3 class="footer-title">Newsletter</h3>
           <p>Subscribe to receive previews of new collections and exclusive offers.</p>
           <form class="newsletter-form" id="newsletter-form">
-            <input type="email" class="newsletter-input" placeholder="Your Email Address" required aria-label="Email address for newsletter">
+            <input type="email" class="newsletter-input" placeholder="Your Email Address" required
+              aria-label="Email address for newsletter">
             <button type="submit" class="newsletter-btn">Join</button>
           </form>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <p class="copyright">&copy; 2026 VALERIUS Luxury. All Rights Reserved. Development Showcase.</p>
         <div class="footer-bottom-links">
@@ -309,11 +355,11 @@
       <h2 class="cart-title">Your Cart</h2>
       <button class="close-btn" id="cart-close-btn" aria-label="Close Cart">&times;</button>
     </div>
-    
+
     <div class="cart-items" id="cart-items-container">
       <!-- Dynamic Cart Items Rendered Here -->
     </div>
-    
+
     <div class="cart-footer">
       <div class="cart-totals-row">
         <span>Cart Items:</span>
@@ -335,7 +381,7 @@
   <div class="modal-overlay" id="detail-modal">
     <div class="modal-content-wrapper">
       <button class="modal-close-btn" id="detail-close-btn" aria-label="Close Product Details">&times;</button>
-      
+
       <div class="product-detail" id="product-detail-view">
         <!-- Rendered dynamically by app.js -->
       </div>
@@ -346,13 +392,13 @@
   <div class="modal-overlay" id="checkout-modal">
     <div class="modal-content-wrapper" style="width: 1100px; max-width: 90%;">
       <button class="modal-close-btn" id="checkout-close-btn" aria-label="Close Checkout Modal">&times;</button>
-      
+
       <div class="checkout-modal-content" id="checkout-main-content">
         <h2 class="checkout-title">Secured Checkout</h2>
-        
+
         <form class="checkout-grid" id="checkout-form">
           <div class="checkout-form-section">
-            
+
             <!-- Shipping Information -->
             <div>
               <h3 class="checkout-block-title">Shipping Information</h3>
@@ -366,7 +412,7 @@
                   <input type="text" id="ship-lname" class="form-input" required>
                 </div>
               </div>
-              
+
               <div class="form-group">
                 <label class="form-label" for="ship-email">Email Address *</label>
                 <input type="email" id="ship-email" class="form-input" required>
@@ -392,20 +438,23 @@
             <!-- Razorpay Card Payment Fields -->
             <div>
               <h3 class="checkout-block-title">Payment Details</h3>
-              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Secure payment processing simulated via Razorpay. Card payments only.</p>
-              
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Secure payment
+                processing simulated via Razorpay. Card payments only.</p>
+
               <div class="razorpay-card-container">
                 <div class="razorpay-logo">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
-                    <path d="M12 2L2 22h20L12 2zm0 4l6.5 13H5.5L12 6z"/>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                    style="vertical-align: middle;">
+                    <path d="M12 2L2 22h20L12 2zm0 4l6.5 13H5.5L12 6z" />
                   </svg>
                   razorpay <span>Secure</span>
                 </div>
                 <h4 class="razorpay-card-title">Credit or Debit Card</h4>
-                
+
                 <div class="form-group">
                   <label class="form-label" for="card-num">Card Number *</label>
-                  <input type="text" id="card-num" class="form-input" placeholder="4111 2222 3333 4444" maxlength="19" required>
+                  <input type="text" id="card-num" class="form-input" placeholder="4111 2222 3333 4444" maxlength="19"
+                    required>
                 </div>
 
                 <div class="form-row-2">
@@ -420,13 +469,13 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
 
           <!-- Checkout Order Summary -->
           <div class="order-summary-panel">
             <h3 class="checkout-block-title" style="margin-bottom: 2rem;">Order Summary</h3>
-            
+
             <div class="checkout-items-list" id="checkout-items-list">
               <!-- Rendered dynamically -->
             </div>
@@ -462,8 +511,10 @@
               <span id="checkout-grand-total">₹0</span>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; height: 50px;">Simulate Secure Payment</button>
-            <p class="checkout-currency-note">Prices shown converted for convenience. The actual transaction will be executed in **INR** via Razorpay Gateway at conversion rates.</p>
+            <button type="submit" class="btn btn-primary" style="width: 100%; height: 50px;">Simulate Secure
+              Payment</button>
+            <p class="checkout-currency-note">Prices shown converted for convenience. The actual transaction will be
+              executed in **INR** via Razorpay Gateway at conversion rates.</p>
           </div>
         </form>
       </div>
@@ -472,13 +523,13 @@
       <div class="checkout-success-content" id="checkout-success-view" style="display: none;">
         <div class="success-icon-wrapper">
           <svg class="success-checkmark" viewBox="0 0 52 52">
-            <circle class="success-checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
-            <path class="success-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            <circle class="success-checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+            <path class="success-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
           </svg>
         </div>
         <h2 class="success-title">Order Confirmed</h2>
         <p class="success-subtitle">Thank you for your purchase at VALERIUS.</p>
-        
+
         <div class="success-details-card">
           <div class="success-details-row">
             <span>Transaction ID:</span>
@@ -493,8 +544,9 @@
             <strong style="color: #4caf50;">Insured & Dispatched in 24h</strong>
           </div>
         </div>
-        
-        <button type="button" class="btn btn-primary" id="success-continue-btn" style="width: auto;">Continue Shopping</button>
+
+        <button type="button" class="btn btn-primary" id="success-continue-btn" style="width: auto;">Continue
+          Shopping</button>
       </div>
     </div>
   </div>
@@ -503,7 +555,7 @@
   <div class="modal-overlay" id="policy-modal">
     <div class="modal-content-wrapper">
       <button class="modal-close-btn" id="policy-close-btn" aria-label="Close Policy Modal">&times;</button>
-      
+
       <div class="policy-modal-content" id="policy-content-view">
         <!-- Rendered dynamically by app.js based on which modal clicked -->
       </div>
@@ -531,4 +583,5 @@
   <!-- JAVASCRIPT LOGIC -->
   <script src="app.js"></script>
 </body>
+
 </html>
